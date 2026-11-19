@@ -1,4 +1,7 @@
 import express from 'express'
-import {searchMovies,getMoviesDetails}
+import {searchMovies, getMovieDetails} from '../controllers/movieController'
 
 const router= express.Router()
+
+router.get('/search', searchMovies)
+router.get('/movies/:id', getMovieDetails)
