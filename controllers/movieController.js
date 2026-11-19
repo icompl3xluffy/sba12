@@ -28,7 +28,7 @@ export const getMovieDetails =async (req, res) =>{
     })
      res.json(response.data)
     } catch (error) {
-        res.status(500).json({error: "Finding Movie Details ERROR!"})
+        res.status(500) .json({error: "Finding Movie Details ERROR!"})
     }
     
 }
