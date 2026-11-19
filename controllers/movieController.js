@@ -8,7 +8,7 @@ export const searchmovies = async(req, res)=>{
     }
 
     try{
-        const response= await axios.get(http://www.omdbapi.com/", 
+        const response= await axios.get("http://www.omdbapi.com/", 
             {params:{s: title, apikey: process.env.OMDB_API_KEY}
     })
 
