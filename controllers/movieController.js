@@ -10,7 +10,11 @@ export const searchmovies = async(req, res)=>{
     }
 
     try{
-        response= await axios.get(http://www.omdbapi.com/?i=tt3896198&apikey=OMDB_API_KEY)
+        response= await axios.get(http://www.omdbapi.com/){
+            params{
+                s: title,
+                apikey: PerformanceObserverEntryList.env.OMDB_API_KEY
+            }
 
     } catch (error)
 
