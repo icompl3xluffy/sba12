@@ -13,11 +13,20 @@ export const searchmovies = async(req, res)=>{
     })
 
     } catch (error) {
-        res.Staus(500).json({error: "Failed to fetch movies"})
+        res.Staus(500).json({error: "Can Not Find Movies"})
     }
 
 }
 
 export const getMovieDetails =async (req, res) =>{
     const id= req.params.id 
+
+    try{ 
+        const response =await axios.get("http://www.omdbapi.com/",
+             {params: title, apikey: PerformanceObserverEntryList.env.OMDB_API_KEY}
+
+    })
+     res.json(response.data)
+   
+    
 }
