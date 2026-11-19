@@ -4,18 +4,16 @@ import axios from 'axios'
 export const searchmovies = async(req, res)=>{
     const title=req.query.title
     if (!title){
-        res.status(400).json({error: "Title query parameter is required"})
-
-        return
+        return res.status(400).json({error: "Title query parameter is required"})
     }
 
     try{
-        response= await axios.get(http://www.omdbapi.com/){
-            params{
-                s: title,
-                apikey: PerformanceObserverEntryList.env.OMDB_API_KEY
-            }
+        const response= await axios.get(http://www.omdbapi.com/", 
+            {params:{s: title, apikey: PerformanceObserverEntryList.env.OMDB_API_KEY}
+    })
 
-    } catch (error)
+    } catch (error) {
+        res.Staus(500).json({error: "Failed to fetch movies"})
+    }
 
 }
