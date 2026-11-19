@@ -9,7 +9,7 @@ export const searchmovies = async(req, res)=>{
 
     try{
         const response= await axios.get(http://www.omdbapi.com/", 
-            {params:{s: title, apikey: PerformanceObserverEntryList.env.OMDB_API_KEY}
+            {params:{s: title, apikey: process.env.OMDB_API_KEY}
     })
 
     } catch (error) {
@@ -23,10 +23,12 @@ export const getMovieDetails =async (req, res) =>{
 
     try{ 
         const response =await axios.get("http://www.omdbapi.com/",
-             {params: title, apikey: PerformanceObserverEntryList.env.OMDB_API_KEY}
+             {params:{ i: id, apikey: process.env.OMDB_API_KEY}
 
     })
      res.json(response.data)
-   
+    } catch (error) {
+        res.status(500).json({error: "Finding Movie Details ERROR!"})
+    }
     
 }
