@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import routes from routes/movieRoutes.js
+import movieRoutes from "./routes/moviesRoutes"
 import express from 'express'
 
 
